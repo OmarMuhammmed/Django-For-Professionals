@@ -127,14 +127,16 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # django-allauth config
-SITE_ID = 1
+SITE_ID = 2
+
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*']

@@ -7,3 +7,4 @@ django-crispy-forms
 crispy-bootstrap4
 django-allauth
 django-allauth[socialaccount]
+# environs[django]

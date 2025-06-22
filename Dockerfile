@@ -14,5 +14,7 @@ RUN pip install -r requirements.txt
 # Copy project
 COPY . /code/
 
+# make migrations and migrate before runserver
+
 # Run development server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

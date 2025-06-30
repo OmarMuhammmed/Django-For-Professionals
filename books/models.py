@@ -4,7 +4,6 @@ import uuid
 from django.contrib.auth import get_user_model
 
 
-
 class Book(models.Model):
     id = models.UUIDField(primary_key=True,
                           default=uuid.uuid4,
@@ -14,6 +13,12 @@ class Book(models.Model):
     author = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     cover = models.ImageField(upload_to='covers/', blank=True)
+
+    class Meta:
+        
+        permissions = [
+            ("special_status", "Can read all books"),
+        ]
 
     def __str__(self):
         return self.title
@@ -31,6 +36,5 @@ class Review(models.Model):
     review = models.CharField(max_length=225)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
-    
     def __str__(self):
-        return self.review 
+        return self.review

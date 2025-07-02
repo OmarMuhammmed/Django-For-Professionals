@@ -9,3 +9,6 @@ django-allauth
 django-allauth[socialaccount]
 environs[django]
 pillow
+django-debug-toolbar
+whitenoise
+gunicorn
